@@ -3,12 +3,27 @@ import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
 
+const galleryItemsImg = document.querySelector(".gallery");
 
-const galeryEl = document.querySelector('ul.gallery');
-console.log(galeryEl);
+function galeryItemImg(galleryItems) {
+    return galleryItems
+      .map((galleryItems) => {
+        return `<div class="gallery__item">
+  <a class="gallery__link" href="large-image.jpg">
+    <img
+      class="gallery__image"
+      src="small-image.jpg"
+      data-source="large-image.jpg"
+      alt="Image description"
+    />
+  </a>
+</div>`;
+      })
+      .join("");
+};
 
-function creatListItem(item) {
-    return galleryItems.map(item => {
-        console.log(item);
-    });
-}
+const emgEl = galeryItemImg(galleryItems);
+
+console.log(emgEl);
+
+galleryItemsImg.insertAdjacentHTML("beforeend", emgEl);
