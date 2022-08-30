@@ -7,14 +7,14 @@ const galleryItemsImg = document.querySelector(".gallery");
 
 function galeryItemImg(galleryItems) {
     return galleryItems
-      .map((galleryItems) => {
+      .map(({ preview, original, description }) => {
         return `<div class="gallery__item">
-  <a class="gallery__link" href="large-image.jpg">
+  <a class="gallery__link" href="${original}">
     <img
-      class="gallery__image"
+      class="${preview}"
       src="small-image.jpg"
       data-source="large-image.jpg"
-      alt="Image description"
+      alt="${description}"
     />
   </a>
 </div>`;
