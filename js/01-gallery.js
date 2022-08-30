@@ -11,19 +11,26 @@ function galeryItemImg(galleryItems) {
         return `<div class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
-      class="${preview}"
-      src="small-image.jpg"
+      class="galery-image"
+      src="${preview}"
       data-source="large-image.jpg"
       alt="${description}"
     />
   </a>
 </div>`;
       })
-      .join("");
-};
+      .join('');
+}
 
 const emgEl = galeryItemImg(galleryItems);
 
 console.log(emgEl);
 
 galleryItemsImg.insertAdjacentHTML("beforeend", emgEl);
+
+
+new SimpleLightbox('.galery a', {
+    captionsData: 'alt',
+    captioneDelay:250,
+});
+console.log(galleryItemsImg);
