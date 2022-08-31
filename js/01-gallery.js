@@ -3,34 +3,47 @@ import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
 
-const galleryItemsImg = document.querySelector(".gallery");
 
-function galeryItemImg(galleryItems) {
-    return galleryItems
-      .map(({ preview, original, description }) => {
+const galleryItem = document.querySelector(".gallery");
+
+function galleryImg(galleryItems) {
+    return galleryItems.map(({ preview, original, description }) => {
         return `<div class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
-      class="galery-image"
+      class="gallery__image"
       src="${preview}"
       data-source="large-image.jpg"
       alt="${description}"
     />
   </a>
 </div>`;
-      })
-      .join('');
+  }).join('');
 }
 
-const emgEl = galeryItemImg(galleryItems);
-
-console.log(emgEl);
-
-galleryItemsImg.insertAdjacentHTML("beforeend", emgEl);
+galleryItem.insertAdjacentHTML("beforeend", galleryImg(galleryItems));
 
 
-new SimpleLightbox('.galery a', {
-    captionsData: 'alt',
-    captioneDelay:250,
-});
-console.log(galleryItemsImg);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
