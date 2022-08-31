@@ -28,6 +28,8 @@ var lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
   captionPosition: "bottom",
+  loop: false,
+  docClose:true,
 });
 
 console.log(gallery);
